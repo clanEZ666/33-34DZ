@@ -21,10 +21,21 @@ public class Main {
         cat.makeEat();
         bird.makeEat();
 
+        bird.move();
+        crow.move();
+
         //Список для демонстрации полиморфного поведения
         Animal[] animals = {dog, cat, bird};
         for (Animal animal : animals) {
             animal.makeSound();
+            animal.move();
+
+         if (animal instanceof Pet) {
+             Pet pet = (Pet) animal;
+             pet.play();
+             pet.beFriendly();
+         }
+
         }
 
     }

@@ -9,10 +9,12 @@ public class Bird extends Animal {
     }
 
     public void setCanFly(boolean canFly) {
+
         this.canFly = canFly;
     }
 
     public boolean isCanFly() {
+
         return canFly;
     }
 
@@ -33,4 +35,14 @@ public class Bird extends Animal {
     public void makeEat() {
         System.out.println(getName() + " питается семенами");
     }
+
+    @Override
+    public void move() {
+        if (canFly) {
+            System.out.printf(getName() + "  летит");
+        } else {
+            System.out.printf(getName() + " ходит пешком");
+        }
+    }
+
 }
